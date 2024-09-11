@@ -28,5 +28,10 @@ int main() {
     // Reset color formatting
     std::cout << "This is normal text again." << '\n';
 
+    // Using Basic background colors
+    std::cout << dye::GetBackgroundText(dye::BackgroundColor::Cyan, "Cyan BackGround text color!") << '\n';
+
+    std::cout << "Normal Text \n";
+
     return 0;
 }

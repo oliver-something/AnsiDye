@@ -71,6 +71,7 @@ namespace dye {
     };
 
     std::unordered_map<Color, std::string> colorCache;
+    std::unordered_map<BackgroundColor, std::string> backgroundCache;
 
     std::string GetCachedColorText(Color color) {
         if (colorCache.find(color) == colorCache.end()) {
@@ -79,8 +80,19 @@ namespace dye {
         return colorCache[color];
     }
 
+    std::string GetCachedBackground(BackgroundColor background) {
+        if (backgroundCache.find(background) == backgroundCache.end()) {
+            backgroundCache[background] = std::format("\033[{}m", backgroundColors[background]);
+        }
+        return backgroundCache[background];
+    }
+
     std::string GetColorText(Color color, const std::string &text) {
         return GetCachedColorText(color) + text + RESET_CODE;
+    }
+
+    std::string GetBackgroundText(BackgroundColor backgroundColor, const std::string & text) {
+        return GetCachedBackground(backgroundColor) + text + RESET_CODE;
     }
 
     constexpr bool IsValidCode(int code) {
@@ -209,6 +221,50 @@ namespace dye {
         return GetColorText(Color::BrightWhite, text);
     }
 
-}
+    [[maybe_unused]]
+    std::string BlackBackGroundText(const std::string & text) {
+        return GetBackgroundText(BackgroundColor::Black , text);
+    }
 
-// TODO Cache the default backgroundColors and StyledText
+    [[maybe_unused]]
+    std::string RedBackGroundText(const std::string & text) {
+        return GetBackgroundText(BackgroundColor::Red, text);
+    }
+
+
+    [[maybe_unused]]
+    std::string GreenBackGroundText(const std::string & text) {
+        return GetBackgroundText(BackgroundColor::Green, text);
+    }
+
+
+    [[maybe_unused]]
+    std::string YellowBackGroundText(const std::string & text) {
+        return GetBackgroundText(BackgroundColor::Yellow, text);
+    }
+
+
+    [[maybe_unused]]
+    std::string BlueBackGroundText(const std::string & text) {
+        return GetBackgroundText(BackgroundColor::Blue, text);
+    }
+
+
+    [[maybe_unused]]
+    std::string MagentaBackGroundText(const std::string & text) {
+        return GetBackgroundText(BackgroundColor::Magenta, text);
+    }
+
+
+    [[maybe_unused]]
+    std::string CyanBackGroundText(const std::string & text) {
+        return GetBackgroundText(BackgroundColor::Cyan, text);
+    }
+
+
+    [[maybe_unused]]
+    std::string WhiteBackGroundText(const std::string & text) {
+        return GetBackgroundText(BackgroundColor::White, text);
+    }
+
+}
