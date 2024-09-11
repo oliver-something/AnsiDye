@@ -39,10 +39,10 @@ int main() {
 
     // Background color example
     std::cout << dye::GetStyledText(dye::Color::White, dye::BackgroundColor::Blue)
-              << "White text on blue background" << dye::RESET_CODE << '\n';
+              << "White text on blue background" << dye::ResetColor << '\n';
 
     // Custom color with 256-color palette
-    std::cout << dye::GetColorText(82) + "This is green text from the 256-color palette!" + dye::RESET_CODE << '\n';
+    std::cout << dye::GetColorText(82) + "This is green text from the 256-color palette!" << dye::ResetColor << '\n';
 
     // Reset color formatting
     std::cout << "This is normal text again." << '\n';
