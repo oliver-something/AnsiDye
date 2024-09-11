@@ -22,33 +22,34 @@ AnsiDye is a lightweight cross-platform C++ library designed to make colorizing 
 
 int main() {
     // Basic color text examples
-    std::cout << dye::RedText("This is red text!") << std::endl;
-    std::cout << dye::GreenText("This is green text!") << std::endl;
-    std::cout << dye::BlueText("This is blue text!") << std::endl;
+    std::cout << dye::RedText("This is red text!") << '\n';
+    std::cout << dye::GreenText("This is green text!") << '\n';
+    std::cout << dye::BlueText("This is blue text!") << '\n';
 
     // Bright color text examples
-    std::cout << dye::BrightRedText("This is bright red text!") << std::endl;
-    std::cout << dye::BrightGreenText("This is bright green text!") << std::endl;
-    std::cout << dye::BrightBlueText("This is bright blue text!") << std::endl;
+    std::cout << dye::BrightRedText("This is bright red text!") << '\n';
+    std::cout << dye::BrightGreenText("This is bright green text!") << '\n';
+    std::cout << dye::BrightBlueText("This is bright blue text!") << '\n';
 
     // Bold text example
-    std::cout << dye::GetBoldText(dye::Color::Yellow) + "This is bold yellow text!" + dye::RESET_CODE << std::endl;
+    std::cout << dye::GetBoldText(dye::Color::Yellow) + "This is bold yellow text!" << dye::ResetColor << '\n';
 
     // Underlined text example with custom color code
-    std::cout << dye::GetUnderlinedText(196) + "This is underlined red text (256-color palette)!" + dye::RESET_CODE << std::endl;
+    std::cout << dye::GetUnderlinedText(196) + "This is underlined red text (256-color palette)!" << dye::ResetColor << '\n';
 
     // Background color example
     std::cout << dye::GetStyledText(dye::Color::White, dye::BackgroundColor::Blue)
-              << "White text on blue background" << dye::RESET_CODE << std::endl;
+              << "White text on blue background" << dye::RESET_CODE << '\n';
 
     // Custom color with 256-color palette
-    std::cout << dye::GetColorText(82) + "This is green text from the 256-color palette!" + dye::RESET_CODE << std::endl;
+    std::cout << dye::GetColorText(82) + "This is green text from the 256-color palette!" + dye::RESET_CODE << '\n';
 
     // Reset color formatting
-    std::cout << "This is normal text again." << std::endl;
+    std::cout << "This is normal text again." << '\n';
 
     return 0;
 }
+
 
 ```
 
