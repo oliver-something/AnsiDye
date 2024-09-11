@@ -1,8 +1,4 @@
-Here's a description you can use for the markdown file of your library:
-
----
-
-# **AnsiDye**
+# **AnsiDye 🖌️**
 
 AnsiDye is a lightweight cross-platform C++ library designed to make colorizing console text easy and efficient using ANSI escape codes. Whether you're looking to add vibrant foreground and background colors or apply styles like bold and underline, AnsiDye provides an intuitive interface for formatting text with both standard and 256-color options.
 
@@ -18,7 +14,9 @@ AnsiDye is a lightweight cross-platform C++ library designed to make colorizing 
 
 ## **Example Usage**
 
-```cpp
+> ⚠️ Just Copy and paste the header-file into your project and you are good to go!
+
+```c++
 #include <iostream>
 #include "ansiDye.hpp"
 
