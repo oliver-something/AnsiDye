@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>AnsiDye - Colorize Your Console</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Prism.js CSS for Syntax Highlighting -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+    <style>
+        /* Custom CSS for code blocks */
+        code {
+            background-color: #f1f5f9;
+            padding: 0.25rem;
+            border-radius: 0.25rem;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-900">
+<header class="bg-blue-600 text-white py-6">
+    <h1 class="text-center text-4xl font-bold">AnsiDye 🖌️</h1>
+    <p class="text-center text-lg mt-2">Lightweight cross-platform C++ library for colorizing console text</p>
+</header>
+
+<main class="container mx-auto px-4 py-8">
+    <!-- Features Section -->
+    <section>
+        <h2 class="text-3xl font-semibold mb-4">Features</h2>
+        <ul class="list-disc list-inside mb-6">
+            <li><strong>Cross-Platform:</strong> Works on Linux, macOS, and Windows (with ANSI support).</li>
+            <li><strong>Foreground and Background Colors:</strong> Apply 16 basic and bright colors to text or backgrounds.</li>
+            <li><strong>256-color Support:</strong> Use any of the 256 ANSI colors by specifying their code.</li>
+            <li><strong>Bold and Underline Text:</strong> Style your text with additional emphasis.</li>
+            <li><strong>Color Caching:</strong> Efficiently reuse preformatted color codes for faster performance.</li>
+            <li><strong>Reset Formatting:</strong> Easily reset text back to default styles.</li>
+            <li><strong>Simple Integration:</strong> Just include the header file in your project.</li>
+        </ul>
+    </section>
+
+    <!-- Example Usage Section -->
+    <section>
+        <h2 class="text-3xl font-semibold mb-4">Example Usage</h2>
+        <p class="mb-4">⚠️ Just copy and paste the header-file into your project and you are good to go!</p>
+        <pre class="bg-gray-900 text-white p-4 rounded-md mb-6"><code class="language-cpp">
+#include &lt;iostream&gt;
+#include "ansiDye.hpp"
+
+int main() {
+    std::cout &lt;&lt; dye::RedText("This is red text!") &lt;&lt; '\n';
+    std::cout &lt;&lt; dye::GreenText("This is green text!") &lt;&lt; '\n';
+    std::cout &lt;&lt; dye::BlueText("This is blue text!") &lt;&lt; '\n';
+    std::cout &lt;&lt; dye::BrightRedText("This is bright red text!") &lt;&lt; '\n';
+    std::cout &lt;&lt; dye::BrightGreenText("This is bright green text!") &lt;&lt; '\n';
+    std::cout &lt;&lt; dye::BrightBlueText("This is bright blue text!") &lt;&lt; '\n';
+    std::cout &lt;&lt; dye::GetBoldText(dye::Color::Yellow) + "This is bold yellow text!" &lt;&lt; dye::ResetColor &lt;&lt; '\n';
+    std::cout &lt;&lt; dye::GetUnderlinedText(196) + "This is underlined red text (256-color palette)!" &lt;&lt; dye::ResetColor &lt;&lt; '\n';
+    std::cout &lt;&lt; dye::GetStyledText(dye::Color::White, dye::BackgroundColor::Blue) + "White text on blue background" &lt;&lt; dye::ResetColor &lt;&lt; '\n';
+    std::cout &lt;&lt; dye::GetColorText(82) + "This is green text from the 256-color palette!" &lt;&lt; dye::ResetColor &lt;&lt; '\n';
+    std::cout &lt;&lt; "This is normal text again." &lt;&lt; '\n';
+    return 0;
+}
+      </code></pre>
+    </section>
+
+    <!-- GitHub Contribution Section -->
+    <section class="my-8">
+        <h2 class="text-3xl font-semibold mb-4">Contribute or Donate</h2>
+        <p class="mb-6">AnsiDye is an open-source project licensed under the MIT License. Contributions and donations are welcome to help support the project’s growth!</p>
+        <a href="https://github.com/oliver-something/AnsiDye" class="inline-flex items-center px-4 py-2 bg-gray-800 text-white font-semibold rounded-lg hover:bg-gray-700 transition">
+            <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub Logo" class="w-6 h-6 mr-2">
+            View on GitHub
+        </a>
+    </section>
+</main>
+
+<footer class="bg-gray-800 text-white py-4 text-center">
+    <p>&copy; 2024 AnsiDye by Oliver. All rights reserved.</p>
+</footer>
+
+<!-- Prism.js for Syntax Highlighting -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/prism.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/components/prism-cpp.min.js"></script>
+</body>
+</html>
