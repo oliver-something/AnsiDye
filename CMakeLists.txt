@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.29)
-project(ColorfulConsole)
+project(AnsiDye)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(ColorfulConsole main.cpp
+add_executable(AnsiDye main.cpp
         ansiDye.hpp)
