@@ -23,7 +23,7 @@ int main() {
               << "White text on blue background" << dye::ResetColor << '\n';
 
     // Custom color with 256-color palette
-    std::cout << dye::GetColorText(82) + "This is green text from the 256-color palette!" << dye::ResetColor << '\n';
+    std::cout << dye::GetColorCode(82) + "This is green text from the 256-color palette!" << dye::ResetColor << '\n';
 
     // Reset color formatting
     std::cout << "This is normal text again." << '\n';

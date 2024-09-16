@@ -57,7 +57,7 @@ int main() {
     std::cout &lt;&lt; dye::GetBoldText(dye::Color::Yellow) + "This is bold yellow text!" &lt;&lt; dye::ResetColor &lt;&lt; '\n';
     std::cout &lt;&lt; dye::GetUnderlinedText(196) + "This is underlined red text (256-color palette)!" &lt;&lt; dye::ResetColor &lt;&lt; '\n';
     std::cout &lt;&lt; dye::GetStyledText(dye::Color::White, dye::BackgroundColor::Blue) + "White text on blue background" &lt;&lt; dye::ResetColor &lt;&lt; '\n';
-    std::cout &lt;&lt; dye::GetColorText(82) + "This is green text from the 256-color palette!" &lt;&lt; dye::ResetColor &lt;&lt; '\n';
+    std::cout &lt;&lt; dye::GetColorCode(82) + "This is green text from the 256-color palette!" &lt;&lt; dye::ResetColor &lt;&lt; '\n';
     std::cout &lt;&lt; "This is normal text again." &lt;&lt; '\n';
     return 0;
 }

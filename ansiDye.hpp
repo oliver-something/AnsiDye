@@ -100,7 +100,7 @@ namespace dye {
     }
 
     [[maybe_unused]]
-    std::string GetColorText(int code) {
+    std::string GetColorCode(int code) {
         return IsValidCode(code) ? std::format("\033[38;5;{}m", code) : RESET_CODE;
     }
 
@@ -115,7 +115,7 @@ namespace dye {
     }
 
     [[maybe_unused]]
-    std::string GetBackgroundColor(int code = 0) {
+    std::string GetBackgroundColorCode(int code = 0) {
         return IsValidCode(code) ? std::format("\033[48;5;{}m", code) : RESET_CODE;
     }
 
@@ -137,7 +137,7 @@ namespace dye {
     //For all colors
     [[maybe_unused]]
     std::string FormattedColoredText(int code, const std::string & text) {
-        return GetColorText(code) + text + RESET_CODE;
+        return GetColorCode(code) + text + RESET_CODE;
     }
 
     // Default Colors

@@ -32,7 +32,7 @@ int main() {
     std::cout << dye::BrightBlueText("This is bright blue text!") << '\n';
 
     // Bold text example
-    std::cout << dye::GetBoldText(dye::Color::Yellow) + "This is bold yellow text!" << dye::ResetColor << '\n';
+    std::cout << dye::GetBoldCode(dye::Color::Yellow) + "This is bold yellow text!" << dye::ResetColor << '\n';
 
     // Underlined text example with custom color code
     std::cout << dye::GetUnderlinedText(196) + "This is underlined red text (256-color palette)!" << dye::ResetColor << '\n';
