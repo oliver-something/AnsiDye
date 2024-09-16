@@ -32,7 +32,7 @@ int main() {
     std::cout << dye::BrightBlueText("This is bright blue text!") << '\n';
 
     // Bold text example
-    std::cout << dye::GetBoldCode(dye::Color::Yellow) + "This is bold yellow text!" << dye::ResetColor << '\n';
+    std::cout << dye::GetBoldText(dye::Color::Yellow) + "This is bold yellow text!" << dye::ResetColor << '\n';
 
     // Underlined text example with custom color code
     std::cout << dye::GetUnderlinedText(196) + "This is underlined red text (256-color palette)!" << dye::ResetColor << '\n';
@@ -42,7 +42,7 @@ int main() {
               << "White text on blue background" << dye::ResetColor << '\n';
 
     // Custom color with 256-color palette
-    std::cout << dye::GetColorText(82) + "This is green text from the 256-color palette!" << dye::ResetColor << '\n';
+    std::cout << dye::GetColorCode(82) + "This is green text from the 256-color palette!" << dye::ResetColor << '\n';
 
     // Reset color formatting
     std::cout << "This is normal text again." << '\n';
@@ -55,5 +55,10 @@ int main() {
 
 ---
 
+### Samples
+
+![Screenshot 2024-09-16 at 1.37.14 PM.png](img/Screenshot%202024-09-16%20at%201.37.14%E2%80%AFPM.png)
+
+![Screenshot 2024-09-16 at 1.37.37 PM.png](img/Screenshot%202024-09-16%20at%201.37.37%E2%80%AFPM.png)
 AnsiDye is open-source and licensed under the MIT License.
 
