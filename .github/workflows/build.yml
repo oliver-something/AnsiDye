@@ -18,6 +18,9 @@ jobs:
     - name: Install CMake
       run: sudo apt-get install cmake
 
+    - name: Install gcc
+      run: sudo apt-get install -y cmake g++ 
+
     - name: Configure the CMake project
       run: cmake -B build
 
