@@ -22,9 +22,8 @@ jobs:
     - name: Install Clang 16
       run: |
         sudo apt-get update
-        sudo apt install --reinstall gcc-13
+        sudo apt install gcc-13
         sudo ln -s -f /usr/bin/gcc-13 /usr/bin/gcc
-        sudo ln -s -f /usr/bin/gcc-11 /usr/bin/gcc
 
     # Install CMake (if not already installed)
     - name: Install CMake
