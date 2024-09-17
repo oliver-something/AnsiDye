@@ -19,8 +19,12 @@ jobs:
     - name: Update
       run: sudo apt-get update
        
-    - name: Install g++13   
-      run: sudo apt-get install -y g++-13
+    - name: Install Clang 16
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y clang-16
+        sudo update-alternatives --install /usr/bin/clang clang /usr/bin/clang-16 60
+        sudo update-alternatives --install /usr/bin/clang++ clang++ /usr/bin/clang++-16 60
 
     # Install CMake (if not already installed)
     - name: Install CMake
