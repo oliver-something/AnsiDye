@@ -31,8 +31,8 @@ jobs:
       run: |
         sudo add-apt-repository ppa:ubuntu-toolchain-r/ppa -y
         sudo apt update
-        apt-get full-upgrade -y
-        apt-get autoremove -y 
+        sudo apt-get full-upgrade -y
+        sudo apt-get autoremove -y 
         sudo apt install -y gcc-13 g++-13
         sudo update-alternatives --install /usr/bin/gcc-13 60 --slave /usr/bin/g++-13
         sudo apt-get install -y gcc-13-multilib g++-13-multilib
