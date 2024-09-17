@@ -1,4 +1,4 @@
-name: AnsiDye Build
+name: AnsiDye CMake Build
 
 on:
   push:
@@ -12,10 +12,17 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v2
 
-    - name: Build AnsiDye
-      run: make
+    # Install dependencies (if necessary)
+    - name: Install CMake
+      run: sudo apt-get install cmake
+
+    - name: Configure the CMake project
+      run: cmake -B build
+
+    - name: Build the project
+      run: cmake --build build
 
     - name: Check executable
-      run: test -x ./AnsiDye 
+      run: test -x ./build/AnsiDye
