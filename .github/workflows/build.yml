@@ -13,7 +13,7 @@ jobs:
       fail-fast: false
       matrix:
         os: [ubuntu-latest]
-        arch: [x86_64, x86]
+        arch: [x86_64]
     
     runs-on: ${{ matrix.os }}
 
@@ -27,11 +27,13 @@ jobs:
       
     - name: Install Build Essentials
       run: sudo apt install -y build-essential
-    - name: Add PPA
+    - name: Add PPA and Install GCC-13
       run: |
         sudo add-apt-repository ppa:ubuntu-toolchain-r/ppa -y
         sudo apt update
-        sudo apt install -y g++-13 gcc-13
+        apt-get full-upgrade -y
+        apt-get autoremove -y 
+        sudo apt install -y gcc-13 g++-13
         sudo update-alternatives --install /usr/bin/gcc-13 60 --slave /usr/bin/g++-13
         sudo apt-get install -y gcc-13-multilib g++-13-multilib
     # Install CMake (if not already installed)
