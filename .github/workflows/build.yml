@@ -18,17 +18,14 @@ jobs:
     
     - name: Update
       run: sudo apt-get update
-       
-    - name: Install Clang 16
-      run: |
-        sudo apt-get update
-        sudo apt install gcc-13
-        sudo ln -s -f /usr/bin/gcc-13 /usr/bin/gcc
-
+      
+    - name: Install Build Essentials
+      run: sudo apt install -y build-essential
+      
     # Install CMake (if not already installed)
     - name: Install CMake
       run: sudo apt-get install -y cmake
-
+    
     # Configure the CMake project with C++23 standard
     - name: Configure CMake with C++23
       run: cmake -B build -DCMAKE_CXX_STANDARD=23
