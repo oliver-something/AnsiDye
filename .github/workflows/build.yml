@@ -1,0 +1,21 @@
+name: AnsiDye Build
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+
+    - name: make
+    - run: make -f /dev/null AnsiDye
+
+    - name: check executable
+    - run: bash -c "[[ -x AnsiDye ]]"
